@@ -1,0 +1,15 @@
+name: Print File on PR
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  print-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print myfile.txt contents
+        run: cat myfile.txt
